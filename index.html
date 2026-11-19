@@ -69,6 +69,33 @@ header.site{position:fixed; top:0; left:0; right:0; z-index:900; display:flex; a
 #menu nav a.ca-item:hover{color:var(--cream-2);}
 #menu .m-foot{margin-top:44px; font-family:var(--mono); font-size:12px; letter-spacing:.28em; color:var(--grey); text-transform:uppercase; display:flex; gap:28px; flex-wrap:wrap;}
 
+/* ---------- contract address / copy ---------- */
+.ca-live{font-family:var(--mono); font-size:11px; letter-spacing:.22em; color:var(--ink); background:var(--teal); border-radius:999px; padding:5px 12px; margin-left:14px; vertical-align:middle; text-transform:uppercase; font-weight:700;}
+.ca-box{display:flex; align-items:center; gap:12px; background:rgba(244,239,230,.06); border:1px solid rgba(238,172,26,.55); border-radius:14px; padding:10px 10px 10px 16px; max-width:100%;}
+.ca-box code{font-family:var(--mono); font-size:13.5px; line-height:1.45; letter-spacing:.01em; color:#fff; word-break:break-all; flex:1; min-width:0;}
+.ca-copy{flex:none; appearance:none; border:0; cursor:pointer; background:var(--gold); color:var(--ink); font-family:var(--mono); font-size:11.5px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; padding:0 18px; min-height:44px; border-radius:999px; display:inline-flex; align-items:center; gap:8px; transition:background .2s, transform .2s;}
+.ca-copy:hover{background:#ffc233; transform:translateY(-1px);}
+.ca-copy.is-copied{background:var(--teal); color:#06231f;}
+.ca-copy:focus-visible{outline:2px solid #fff; outline-offset:2px;}
+.ca-menu{margin-top:2px;}
+.ca-menu-title{font-family:var(--display); font-size:clamp(44px,9vw,104px); line-height:1.02; text-transform:uppercase; color:var(--cream-2); display:flex; align-items:center; flex-wrap:wrap;}
+.ca-menu-title small{font-family:var(--mono); font-size:12px; letter-spacing:.3em; color:var(--gold); vertical-align:super; margin-right:14px; font-weight:400;}
+.ca-menu .ca-box{margin-top:14px; max-width:820px;}
+.ca-menu-note{font-family:var(--mono); font-size:11px; letter-spacing:.22em; text-transform:uppercase; color:var(--grey); margin-top:10px;}
+.hero-ca{margin-top:22px; padding-bottom:28px; max-width:820px;}
+.hero-ca-label{display:block; font-family:var(--mono); font-size:11px; letter-spacing:.28em; text-transform:uppercase; color:var(--gold); margin-bottom:10px;}
+.ca-box--hero{background:rgba(13,9,24,.72); backdrop-filter:blur(6px); border-color:rgba(238,172,26,.75); box-shadow:0 16px 36px rgba(0,0,0,.35);}
+.ca-box--hero code{font-size:14px;}
+.foot-ca{margin-top:18px; max-width:560px;}
+.foot-ca-label{display:block; font-family:var(--mono); font-size:11px; letter-spacing:.26em; text-transform:uppercase; color:var(--grey); margin-bottom:10px;}
+.foot-nav-ca{display:block; margin-top:10px;}
+.foot-nav-ca .ca-box{flex-direction:column; align-items:stretch; padding:12px;}
+.foot-nav-ca .ca-box code{font-size:12px; text-align:left;}
+.foot-nav-ca .ca-copy{justify-content:center; width:100%;}
+@media(max-width:640px){ .ca-box{flex-wrap:wrap;} .ca-box code{flex-basis:100%;} .ca-copy{width:100%; justify-content:center;} .ca-menu-title{font-size:13.5vw;} }
+.app-soon-pill{display:inline-flex; align-items:center; font-family:var(--mono); font-size:11.5px; letter-spacing:.24em; text-transform:uppercase; color:var(--gold); border:1px solid var(--gold); border-radius:999px; padding:10px 16px; min-height:44px;}
+.foot-nav-ca-title{font-family:var(--display); font-size:21px; text-transform:uppercase; letter-spacing:.03em; display:block; padding:7px 0;}
+
 /* ---------- shared ---------- */
 .mono-label{font-family:var(--mono); font-size:12px; letter-spacing:.32em; text-transform:uppercase;}
 .brand{text-transform:none !important;}
@@ -77,7 +104,7 @@ section{position:relative;}
 main > :not(.hero){position:relative; z-index:2;}
 
 /* ---------- hero ---------- */
-.hero{min-height:100svh; height:100svh; display:flex; flex-direction:column; justify-content:flex-end; overflow:hidden; background:#0D0918; position:sticky; top:0; z-index:1;}
+.hero{min-height:100svh; height:auto; display:flex; flex-direction:column; justify-content:flex-end; overflow:hidden; background:#0D0918; position:sticky; top:0; z-index:1;}
 @media(max-height:740px){ .hero{position:relative; height:auto;} }
 .hero-art{position:absolute; inset:0;}
 .hero-art img{width:100%; height:100%; object-fit:cover; object-position:center 30%;}
@@ -311,8 +338,15 @@ footer.site{background:var(--ink); position:relative; overflow:hidden;}
     <a href="#features"><small>02</small>Features</a>
     <a href="#create"><small>03</small>Create a Token</a>
     <a href="#city"><small>04</small>The City</a>
-    <a href="#launch"><small>05</small>Launch App</a>
-    <a href="#launch" class="ca-item" aria-label="GTA6L contract address — coming soon, token not created yet"><small>06</small>CA — $GTA6L<span class="soon">Soon</span></a>
+    <a href="#launch"><small>05</small>Launch App<span class="soon">Soon</span></a>
+    <div class="ca-menu">
+      <div class="ca-menu-title"><small>06</small><span>CA — $GTA6L</span><span class="ca-live">Live</span></div>
+      <div class="ca-box">
+        <code>0xaD8b852858EEA7c5D56a93E5A03259066264ccCC</code>
+        <button type="button" class="ca-copy" data-copy-ca aria-label="Copy GTA6L contract address">⧉ Copy</button>
+      </div>
+      <p class="ca-menu-note">Base · Clanker · Tap Copy — verify before you trade</p>
+    </div>
   </nav>
   <div class="m-foot"><span>Chain · Base</span><span>Ticker · $GTA6L</span><span>Supply · 1,000,000,000</span><span>Pairs · ETH / USDC / Real Stocks</span></div>
 </div>
@@ -330,16 +364,24 @@ footer.site{background:var(--ink); position:relative; overflow:hidden;}
         <span class="chip gold">Ticker · $GTA6L</span>
         <span class="chip gold">Supply · 1,000,000,000</span>
         <span class="chip">Pairs · Tokenized Real Stocks</span>
+        <span class="chip gold">Launchpad App · Soon</span>
       </div>
       <h1>
         <span class="row"><span class="hline">GTA 6</span></span>
         <span class="row"><span class="hline neon">Launchpad</span></span>
       </h1>
-      <div class="hero-sub">
-        <p>The launchpad where the city mints. Its token is <strong>$GTA6L</strong>. Create a token on <strong>Base</strong> in minutes — and pair it with <strong>tokenized real stocks</strong> like NVIDIA and Tesla, tokenized by ST0x — not just ETH.</p>
+      <div class="hero-sub" style="padding-bottom:16px;">
+        <p>The launchpad where the city mints. Its token is <strong>$GTA6L</strong> — now live on Base. Create a token in minutes — and pair it with <strong>tokenized real stocks</strong> like NVIDIA and Tesla, tokenized by ST0x — not just ETH. The launchpad app itself is <strong>Soon</strong>.</p>
         <div class="hero-ctas">
           <a class="btn btn-gold" href="#create">How Creating Works →</a>
           <a class="btn btn-ghost" href="#about">Explore the Project</a>
+        </div>
+      </div>
+      <div class="hero-ca">
+        <span class="hero-ca-label">Contract Address — $GTA6L · Base · Live on Clanker</span>
+        <div class="ca-box ca-box--hero">
+          <code>0xaD8b852858EEA7c5D56a93E5A03259066264ccCC</code>
+          <button type="button" class="ca-copy" data-copy-ca aria-label="Copy GTA6L contract address">⧉ Copy</button>
         </div>
       </div>
     </div>
@@ -364,8 +406,8 @@ footer.site{background:var(--ink); position:relative; overflow:hidden;}
     <div class="intro-grid">
       <div class="intro-col reveal">
         <span class="mono-label">What is it</span>
-        <p><strong>GTA 6 Launchpad</strong> is a token launchpad built on <strong>Base</strong>. Its token ticker is <strong>$GTA6L</strong> — supply 1,000,000,000, not yet created, so the contract address is still marked Soon. Anyone can create and launch a token — no code, no presale games, no insider allocations. Every launch starts on a bonding curve, open to everyone from block one.</p>
-        <p>The landing page is live first. The launchpad app ships separately — this is the front door.</p>
+        <p><strong>GTA 6 Launchpad</strong> is a token launchpad built on <strong>Base</strong>. Its token ticker is <strong>$GTA6L</strong> — supply 1,000,000,000, now live on Base via Clanker. Copy the contract address from the hero or the menu and verify it before you trade. Anyone can create and launch a token — no code, no presale games, no insider allocations. Every launch starts on a bonding curve, open to everyone from block one.</p>
+        <p>The landing page is live first. The launchpad app is <strong>Soon</strong> — it will be built and shipped separately later, this page is the front door.</p>
       </div>
       <figure class="intro-visual reveal">
         <div class="frame"><img src="assets/card-create.webp" alt="Illustrated golden coin with a palm emblem rising over a neon Vice City street at sunset" /></div>
@@ -520,13 +562,26 @@ footer.site{background:var(--ink); position:relative; overflow:hidden;}
       <a href="#create">Create a Token</a>
       <a href="#city">The City</a>
       <a href="#launch">Launch App <span class="soon">Soon</span></a>
-      <a href="#launch">CA — $GTA6L <span class="soon">Soon</span></a>
+      <div class="foot-nav-ca">
+        <span class="foot-nav-ca-title">CA — $GTA6L</span>
+        <div class="ca-box">
+          <code>0xaD8b852858EEA7c5D56a93E5A03259066264ccCC</code>
+          <button type="button" class="ca-copy" data-copy-ca aria-label="Copy GTA6L contract address">⧉ Copy</button>
+        </div>
+      </div>
     </nav>
     <div class="foot-center">
       <span class="mono-label">GTA 6 Launchpad · $GTA6L · On Base</span>
       <h2>Your city.<br/><span>Your token.</span></h2>
-      <p>The launchpad app is in production and ships separately. The landing is open — when the gates lift, creators mint first.</p>
-      <div><a class="btn btn-gold" href="#create">Start with Step 01 →</a></div>
+      <p>The launchpad app is <strong>Soon</strong> — still in production, it will be built and shipped separately later. The token $GTA6L is already live on Base. The landing is open — when the gates lift, creators mint first.</p>
+      <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center;"><a class="btn btn-gold" href="#create">Start with Step 01 →</a><span class="app-soon-pill">Launchpad App · Soon</span></div>
+      <div class="foot-ca">
+        <span class="foot-ca-label">Contract Address — $GTA6L · Base · Tap to copy</span>
+        <div class="ca-box">
+          <code>0xaD8b852858EEA7c5D56a93E5A03259066264ccCC</code>
+          <button type="button" class="ca-copy" data-copy-ca aria-label="Copy GTA6L contract address">⧉ Copy</button>
+        </div>
+      </div>
     </div>
     <div class="foot-visual"><img src="assets/hero-vice.webp" alt="Vice City neon sunset skyline illustration" /></div>
   </div>
@@ -538,7 +593,7 @@ footer.site{background:var(--ink); position:relative; overflow:hidden;}
   <div class="foot-legal">
     <span>© 2026 GTA 6 Launchpad</span>
     <span>Fan-inspired concept. Not affiliated with Rockstar Games or Take-Two Interactive.</span>
-    <span>Landing page · App coming separately</span>
+    <span>Landing page live · Launchpad App — Soon</span>
   </div>
 </footer>
 
@@ -739,6 +794,36 @@ footer.site{background:var(--ink); position:relative; overflow:hidden;}
       });
     }
   }
+
+  /* ---------- contract address copy (like Ladder) ---------- */
+  var GTA6L_CA = "0xaD8b852858EEA7c5D56a93E5A03259066264ccCC";
+  function copyCA(btn){
+    function done(){
+      if (!btn) return;
+      var old = btn.getAttribute("data-label") || btn.textContent;
+      btn.classList.add("is-copied");
+      btn.textContent = "✓ Copied";
+      setTimeout(function(){ btn.classList.remove("is-copied"); btn.textContent = old; }, 2000);
+    }
+    function fallback(){
+      var ta = document.createElement("textarea");
+      ta.value = GTA6L_CA;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "fixed"; ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand("copy"); } catch (e) {}
+      document.body.removeChild(ta);
+      done();
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(GTA6L_CA).then(done).catch(fallback);
+    } else { fallback(); }
+  }
+  document.querySelectorAll("[data-copy-ca]").forEach(function(btn){
+    btn.setAttribute("data-label", btn.textContent);
+    btn.addEventListener("click", function(e){ e.preventDefault(); e.stopPropagation(); copyCA(btn); });
+  });
 
   /* ---------- draggable showcase strip ---------- */
   var vp = document.getElementById("stripViewport");
