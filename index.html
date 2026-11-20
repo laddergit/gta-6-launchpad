@@ -6,8 +6,8 @@
 <meta name="color-scheme" content="dark" />
 <link rel="icon" type="image/webp" href="assets/logo-rocket-v3.webp" />
 <link rel="apple-touch-icon" href="assets/logo-rocket-v3.webp" />
-<title>GTA 6 Launchpad ($GTA6L) — Launch Tokens on Base, Paired with Tokenized Real Stocks</title>
-<meta name="description" content="GTA 6 Launchpad is a token launchpad on Base. Its token ticker is GTA6L ($GTA6L). Create a token in minutes and pair it with ETH, USDC, or tokenized real stocks like NVIDIA and Tesla, tokenized by ST0x. Fixed supply: 1,000,000,000." />
+<title>GTA 6 Launchpad ($GTA6L) — Launch Tokens on Solana, Paired with Tokenized Real Stocks</title>
+<meta name="description" content="GTA 6 Launchpad is a token launchpad on Solana. Its token ticker is GTA6L ($GTA6L), created on pump.fun. Create a token in minutes and pair it with SOL, USDC, or tokenized real stocks like NVIDIA and Tesla, tokenized by ST0x. Fixed supply: 1,000,000,000." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
@@ -15,7 +15,7 @@
 :root{
   --cream:#EAE4DD; --cream-2:#F4EFE6; --ink:#1C1627; --ink-2:#211C2C; --ink-3:#27212B;
   --purple:#502E84; --purple-bright:#8B5CF6; --gold:#EEAC1A; --grey:#9B9696;
-  --pink:#FF5DA2; --teal:#2DD4BF; --base:#0052FF;
+  --pink:#FF5DA2; --teal:#2DD4BF; --sol:#14F195;
   --display:'Anton', 'Arial Narrow', sans-serif;
   --body:'Archivo', Helvetica, Arial, sans-serif;
   --mono:'Space Mono', 'Courier New', monospace;
@@ -74,6 +74,10 @@ header.site{position:fixed; top:0; left:0; right:0; z-index:900; display:flex; a
 
 /* ---------- contract address / copy ---------- */
 .ca-live{font-family:var(--mono); font-size:11px; letter-spacing:.22em; color:var(--ink); background:var(--teal); border-radius:999px; padding:5px 12px; margin-left:14px; vertical-align:middle; text-transform:uppercase; font-weight:700;}
+.ca-soon-badge{font-family:var(--mono); font-size:11px; letter-spacing:.22em; color:var(--gold); border:1px solid var(--gold); border-radius:999px; padding:5px 12px; margin-left:14px; vertical-align:middle; text-transform:uppercase;}
+.ca-box--soon{justify-content:space-between; gap:14px; flex-wrap:wrap;}
+.ca-soon-word{font-family:var(--display); font-size:26px; line-height:1; letter-spacing:.05em; color:var(--gold); text-transform:uppercase;}
+.ca-soon-note{font-family:var(--mono); font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:rgba(244,239,230,.78);}
 .ca-box{display:flex; align-items:center; gap:12px; background:rgba(244,239,230,.06); border:1px solid rgba(238,172,26,.55); border-radius:14px; padding:10px 10px 10px 16px; max-width:100%;}
 .ca-box code{font-family:var(--mono); font-size:13.5px; line-height:1.45; letter-spacing:.01em; color:#fff; word-break:break-all; flex:1; min-width:0;}
 .ca-copy{flex:none; appearance:none; border:0; cursor:pointer; background:var(--gold); color:var(--ink); font-family:var(--mono); font-size:11.5px; font-weight:700; letter-spacing:.18em; text-transform:uppercase; padding:0 18px; min-height:44px; border-radius:999px; display:inline-flex; align-items:center; gap:8px; transition:background .2s, transform .2s;}
@@ -119,7 +123,7 @@ main > :not(.hero){position:relative; z-index:2;}
 .hero-kicker{display:flex; gap:14px; flex-wrap:wrap; align-items:center; margin-bottom:16px;}
 .chip{font-family:var(--mono); font-size:11.5px; letter-spacing:.26em; text-transform:uppercase; border:1px solid rgba(244,239,230,.55); padding:9px 14px; border-radius:999px; backdrop-filter:blur(4px); background:rgba(13,9,24,.35);}
 .chip.gold{border-color:var(--gold); color:var(--gold);}
-.chip .dot{display:inline-block; width:7px; height:7px; border-radius:50%; background:var(--base); margin-right:8px; box-shadow:0 0 10px var(--base);}
+.chip .dot{display:inline-block; width:7px; height:7px; border-radius:50%; background:var(--sol); margin-right:8px; box-shadow:0 0 10px var(--sol);}
 a.chip{text-decoration:none; display:inline-flex; align-items:center; gap:9px; min-height:44px; transition:border-color .25s, color .25s, transform .25s;}
 a.chip:hover{border-color:#fff; color:#fff; transform:translateY(-2px);}
 a.chip svg{width:13px; height:13px; fill:currentColor; flex:none;}
@@ -327,7 +331,7 @@ footer.site{background:var(--ink); position:relative; overflow:hidden;}
 <div id="preloader" role="status" aria-label="Loading">
   <div class="panel p1"></div><div class="panel p2"></div>
   <div class="load-core">
-    <div class="load-name">GTA 6 Launchpad · $GTA6L · Base</div>
+    <div class="load-name">GTA 6 Launchpad · $GTA6L · Solana</div>
     <div class="load-pct"><span id="loadNum">0</span><em>%</em></div>
     <div class="load-bar"><i id="loadBar"></i></div>
   </div>
@@ -350,15 +354,11 @@ footer.site{background:var(--ink); position:relative; overflow:hidden;}
     <a href="#city"><small>04</small>The City</a>
     <a href="#launch"><small>05</small>Launch App<span class="soon">Soon</span></a>
     <div class="ca-menu">
-      <div class="ca-menu-title"><small>06</small><span>CA — $GTA6L</span><span class="ca-live">Live</span></div>
-      <div class="ca-box">
-        <code>0xaD8b852858EEA7c5D56a93E5A03259066264ccCC</code>
-        <button type="button" class="ca-copy" data-copy-ca aria-label="Copy GTA6L contract address">⧉ Copy</button>
-      </div>
-      <p class="ca-menu-note">Base · Clanker · Tap Copy — verify before you trade</p>
+      <div class="ca-menu-title"><small>06</small><span>CA — $GTA6L</span><span class="ca-soon-badge">Soon</span></div>
+      <p class="ca-menu-note">Solana · pump.fun · Contract address drops here at launch</p>
     </div>
   </nav>
-  <div class="m-foot"><span>Chain · Base</span><span>Ticker · $GTA6L</span><span>Supply · 1,000,000,000</span><span>Pairs · ETH / USDC / Real Stocks</span><a class="x-link" href="https://x.com/gta6launch" target="_blank" rel="noopener noreferrer" aria-label="GTA 6 Launchpad on X — @gta6launch"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>@gta6launch</a></div>
+  <div class="m-foot"><span>Chain · Solana</span><span>Ticker · $GTA6L</span><span>Supply · 1,000,000,000</span><span>Pairs · SOL / USDC / Real Stocks</span><a class="x-link" href="https://x.com/gta6launch" target="_blank" rel="noopener noreferrer" aria-label="GTA 6 Launchpad on X — @gta6launch"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>@gta6launch</a></div>
 </div>
 
 <main id="top">
@@ -370,7 +370,7 @@ footer.site{background:var(--ink); position:relative; overflow:hidden;}
     <div class="hero-inner">
       <img class="hero-logo" src="assets/logo-rocket-v3.webp" alt="GTA 6 Launchpad rocket emblem: chrome rocket launching over a neon synthwave sunset with palm silhouettes, inside a round metal badge" />
       <div class="hero-kicker">
-        <span class="chip"><span class="dot"></span>Building on Base</span>
+        <span class="chip"><span class="dot"></span>Building on Solana</span>
         <span class="chip gold">Ticker · $GTA6L</span>
         <span class="chip gold">Supply · 1,000,000,000</span>
         <span class="chip">Pairs · Tokenized Real Stocks</span>
@@ -382,25 +382,25 @@ footer.site{background:var(--ink); position:relative; overflow:hidden;}
         <span class="row"><span class="hline neon">Launchpad</span></span>
       </h1>
       <div class="hero-sub" style="padding-bottom:16px;">
-        <p>The launchpad where the city mints. Its token is <strong>$GTA6L</strong> — now live on Base. Create a token in minutes — and pair it with <strong>tokenized real stocks</strong> like NVIDIA and Tesla, tokenized by ST0x — not just ETH. The launchpad app itself is <strong>Soon</strong>.</p>
+        <p>The launchpad where the city mints. Its token is <strong>$GTA6L</strong> — launching on Solana, created on pump.fun. Create a token in minutes — and pair it with <strong>tokenized real stocks</strong> like NVIDIA and Tesla, tokenized by ST0x — not just SOL. The launchpad app itself is <strong>Soon</strong>.</p>
         <div class="hero-ctas">
           <a class="btn btn-gold" href="#create">How Creating Works →</a>
           <a class="btn btn-ghost" href="#about">Explore the Project</a>
         </div>
       </div>
       <div class="hero-ca">
-        <span class="hero-ca-label">Contract Address — $GTA6L · Base · Live on Clanker</span>
-        <div class="ca-box ca-box--hero">
-          <code>0xaD8b852858EEA7c5D56a93E5A03259066264ccCC</code>
-          <button type="button" class="ca-copy" data-copy-ca aria-label="Copy GTA6L contract address">⧉ Copy</button>
+        <span class="hero-ca-label">Contract Address — $GTA6L · Solana · Soon</span>
+        <div class="ca-box ca-box--hero ca-box--soon">
+          <span class="ca-soon-word">Soon</span>
+          <span class="ca-soon-note">Contract address drops here at launch</span>
         </div>
       </div>
     </div>
     <div class="hero-strip" aria-hidden="true">
-      <div>Network · <b>Base</b></div>
+      <div>Network · <b>Solana</b></div>
       <div>Ticker · <b>$GTA6L</b></div>
       <div>Total Supply · <b>1B Fixed</b></div>
-      <div>Pair Assets · <b>ETH · USDC · Stocks</b></div>
+      <div>Pair Assets · <b>SOL · USDC · Stocks</b></div>
       <div>App · <b>Coming Soon</b></div>
     </div>
   </section>
@@ -417,7 +417,7 @@ footer.site{background:var(--ink); position:relative; overflow:hidden;}
     <div class="intro-grid">
       <div class="intro-col reveal">
         <span class="mono-label">What is it</span>
-        <p><strong>GTA 6 Launchpad</strong> is a token launchpad built on <strong>Base</strong>. Its token ticker is <strong>$GTA6L</strong> — supply 1,000,000,000, now live on Base via Clanker. Copy the contract address from the hero or the menu and verify it before you trade. Anyone can create and launch a token — no code, no presale games, no insider allocations. Every launch starts on a bonding curve, open to everyone from block one.</p>
+        <p><strong>GTA 6 Launchpad</strong> is a token launchpad built on <strong>Solana</strong>. Its token ticker is <strong>$GTA6L</strong> — supply 1,000,000,000, created on pump.fun. The contract address drops here the moment it launches — verify it before you trade. Anyone can create and launch a token — no code, no presale games, no insider allocations. Every launch starts on a bonding curve, open to everyone from block one.</p>
         <p>The landing page is live first. The launchpad app is <strong>Soon</strong> — it will be built and shipped separately later, this page is the front door.</p>
       </div>
       <figure class="intro-visual reveal">
@@ -438,21 +438,21 @@ footer.site{background:var(--ink); position:relative; overflow:hidden;}
           <li><b>QQQ</b><span>Nasdaq-100</span><em>ETF</em></li>
         </ul>
         <p class="byline">Tokenized stocks by <strong>ST0x</strong></p>
-        <p style="margin-top:14px;">Creators don't just pair with ETH or USDC. A new token can launch paired against <strong>tokenized versions of real listed shares</strong> — NVIDIA, Tesla, Apple and more — on Base.</p>
+        <p style="margin-top:14px;">Creators don't just pair with SOL or USDC. A new token can launch paired against <strong>tokenized versions of real listed shares</strong> — NVIDIA, Tesla, Apple and more — on Solana.</p>
       </div>
     </div>
     <div class="spec-band reveal">
       <div><div class="k">Total Supply · $GTA6L</div><div class="v">1,000,000,000</div></div>
-      <div><div class="k">Network</div><div class="v">Base <em>Chain</em></div></div>
+      <div><div class="k">Network</div><div class="v">Solana <em>Chain</em></div></div>
       <div><div class="k">Launch Model</div><div class="v">Bonding <em>Curve</em></div></div>
-      <div><div class="k">Pair Assets</div><div class="v">ETH · USDC · <em>Stocks</em></div></div>
+      <div><div class="k">Pair Assets</div><div class="v">SOL · USDC · <em>Stocks</em></div></div>
     </div>
   </section>
 
   <!-- TICKER -->
   <div class="ticker" aria-hidden="true">
     <div class="ticker-track" id="tickerTrack">
-      <span>$GTA6L <i>✦</i></span><span>Create <i>✦</i></span><span>Pair with NVDA <i>✦</i></span><span>Pair with TSLA <i>✦</i></span><span>On Base <i>✦</i></span><span>Supply 1B <i>✦</i></span><span>Real Stocks <i>✦</i></span><span>Fair Launch <i>✦</i></span><span>ETFs on-chain <i>✦</i></span>
+      <span>$GTA6L <i>✦</i></span><span>Create <i>✦</i></span><span>Pair with NVDA <i>✦</i></span><span>Pair with TSLA <i>✦</i></span><span>On Solana <i>✦</i></span><span>Supply 1B <i>✦</i></span><span>Real Stocks <i>✦</i></span><span>Fair Launch <i>✦</i></span><span>ETFs on-chain <i>✦</i></span>
     </div>
   </div>
 
@@ -484,9 +484,9 @@ footer.site{background:var(--ink); position:relative; overflow:hidden;}
           </figure>
           <figure class="tcard">
             <div class="art"><img src="assets/card-vault.webp" alt="Neon vault door with a golden padlock in front of an art-deco beach hotel at sunset" /></div>
-            <figcaption><span class="n">№ 04</span><span class="t">Graduate &amp; Lock</span><div class="s">Hit the cap · Migrate to DEX<br/>Liquidity locked on Base</div></figcaption>
+            <figcaption><span class="n">№ 04</span><span class="t">Graduate &amp; Lock</span><div class="s">Hit the cap · Migrate to DEX<br/>Liquidity locked on Solana</div></figcaption>
           </figure>
-          <div class="dots-end" aria-hidden="true"><span class="dots-vi">VI</span><span class="dots-cap">Vice City · On Base · Supply 1B</span></div>
+          <div class="dots-end" aria-hidden="true"><span class="dots-vi">VI</span><span class="dots-cap">Vice City · On Solana · Supply 1B</span></div>
           <div class="yardnums" aria-hidden="true"><span>10</span><span>20</span><span>30</span><span>40</span><span>50</span></div>
         </div>
       </div>
@@ -511,9 +511,9 @@ footer.site{background:var(--ink); position:relative; overflow:hidden;}
 
       <article class="slide active" data-slide>
         <div class="step-no">01</div>
-        <div><h3>Name it.<br/>Brand it.</h3><p>Pick a name, a ticker and an image. Your token is minted on Base with a fixed supply — no mint function, no hidden switches, nothing up anyone's sleeve.</p></div>
+        <div><h3>Name it.<br/>Brand it.</h3><p>Pick a name, a ticker and an image. Your token is minted on Solana with a fixed supply — no mint function, no hidden switches, nothing up anyone's sleeve.</p></div>
         <div class="pair-list">
-          <div class="pair-row"><span>Standard</span><b>ERC-20</b><span class="tag">Base</span></div>
+          <div class="pair-row"><span>Standard</span><b>SPL</b><span class="tag">Solana</span></div>
           <div class="pair-row"><span>Code required</span><b>None</b><span class="tag">No-code</span></div>
           <div class="pair-row"><span>Time to live</span><b>~1 Min</b><span class="tag">Instant</span></div>
         </div>
@@ -521,9 +521,9 @@ footer.site{background:var(--ink); position:relative; overflow:hidden;}
 
       <article class="slide" data-slide>
         <div class="step-no">02</div>
-        <div><h3>Pick your<br/>pair asset.</h3><p>This is the twist. Pair your token with ETH or USDC — or against tokenized listed stocks, tokenized by ST0x. Your community trades your token against real-world names, on-chain.</p></div>
+        <div><h3>Pick your<br/>pair asset.</h3><p>This is the twist. Pair your token with SOL or USDC — or against tokenized listed stocks, tokenized by ST0x. Your community trades your token against real-world names, on-chain.</p></div>
         <div class="pair-list">
-          <div class="pair-row"><span>Crypto</span><b>ETH · USDC</b><span class="tag">Classic</span></div>
+          <div class="pair-row"><span>Crypto</span><b>SOL · USDC</b><span class="tag">Classic</span></div>
           <div class="pair-row hot"><span>Stocks</span><b>NVDA · TSLA</b><span class="tag">Tokenized</span></div>
           <div class="pair-row hot"><span>ETFs</span><b>SPY · QQQ</b><span class="tag">Tokenized</span></div>
         </div>
@@ -531,10 +531,10 @@ footer.site{background:var(--ink); position:relative; overflow:hidden;}
 
       <article class="slide" data-slide>
         <div class="step-no">03</div>
-        <div><h3>Hit the curve.<br/>Run the city.</h3><p>Your token trades on the bonding curve from block one. Fill the curve and it graduates to a DEX on Base with liquidity locked — then it's the open road.</p></div>
+        <div><h3>Hit the curve.<br/>Run the city.</h3><p>Your token trades on the bonding curve from block one. Fill the curve and it graduates to a DEX on Solana with liquidity locked — then it's the open road.</p></div>
         <div class="pair-list">
           <div class="pair-row"><span>Trading</span><b>Curve</b><span class="tag">Instant</span></div>
-          <div class="pair-row"><span>Graduation</span><b>DEX</b><span class="tag">Base</span></div>
+          <div class="pair-row"><span>Graduation</span><b>DEX</b><span class="tag">Solana</span></div>
           <div class="pair-row"><span>Liquidity</span><b>Locked</b><span class="tag">On-chain</span></div>
         </div>
       </article>
@@ -574,24 +574,17 @@ footer.site{background:var(--ink); position:relative; overflow:hidden;}
       <a href="#city">The City</a>
       <a href="#launch">Launch App <span class="soon">Soon</span></a>
       <a class="x-nav" href="https://x.com/gta6launch" target="_blank" rel="noopener noreferrer" aria-label="GTA 6 Launchpad on X — @gta6launch"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>@gta6launch</a>
-      <div class="foot-nav-ca">
-        <span class="foot-nav-ca-title">CA — $GTA6L</span>
-        <div class="ca-box">
-          <code>0xaD8b852858EEA7c5D56a93E5A03259066264ccCC</code>
-          <button type="button" class="ca-copy" data-copy-ca aria-label="Copy GTA6L contract address">⧉ Copy</button>
-        </div>
-      </div>
     </nav>
     <div class="foot-center">
-      <span class="mono-label">GTA 6 Launchpad · $GTA6L · On Base</span>
+      <span class="mono-label">GTA 6 Launchpad · $GTA6L · On Solana</span>
       <h2>Your city.<br/><span>Your token.</span></h2>
-      <p>The launchpad app is <strong>Soon</strong> — still in production, it will be built and shipped separately later. The token $GTA6L is already live on Base. The landing is open — when the gates lift, creators mint first.</p>
+      <p>The launchpad app is <strong>Soon</strong> — still in production, it will be built and shipped separately later. The token $GTA6L launches on Solana, created on pump.fun — its contract address drops here at launch. The landing is open — when the gates lift, creators mint first.</p>
       <div style="display:flex; gap:12px; flex-wrap:wrap; align-items:center;"><a class="btn btn-gold" href="#create">Start with Step 01 →</a><span class="app-soon-pill">Launchpad App · Soon</span></div>
       <div class="foot-ca">
-        <span class="foot-ca-label">Contract Address — $GTA6L · Base · Tap to copy</span>
-        <div class="ca-box">
-          <code>0xaD8b852858EEA7c5D56a93E5A03259066264ccCC</code>
-          <button type="button" class="ca-copy" data-copy-ca aria-label="Copy GTA6L contract address">⧉ Copy</button>
+        <span class="foot-ca-label">Contract Address — $GTA6L · Solana · Soon</span>
+        <div class="ca-box ca-box--soon">
+          <span class="ca-soon-word">Soon</span>
+          <span class="ca-soon-note">CA drops here at launch</span>
         </div>
       </div>
     </div>
@@ -599,7 +592,7 @@ footer.site{background:var(--ink); position:relative; overflow:hidden;}
   </div>
   <div class="foot-marquee" aria-hidden="true">
     <div class="ticker-track" id="footTrack">
-      <span>GTA 6 Launchpad</span><span>$GTA6L</span><span>Base</span><span>Real Stocks</span><span>1B Supply</span><span>Vice City</span><span>Fair Launch</span>
+      <span>GTA 6 Launchpad</span><span>$GTA6L</span><span>Solana</span><span>Real Stocks</span><span>1B Supply</span><span>Vice City</span><span>Fair Launch</span>
     </div>
   </div>
   <div class="foot-legal">
@@ -807,36 +800,6 @@ footer.site{background:var(--ink); position:relative; overflow:hidden;}
       });
     }
   }
-
-  /* ---------- contract address copy (like Ladder) ---------- */
-  var GTA6L_CA = "0xaD8b852858EEA7c5D56a93E5A03259066264ccCC";
-  function copyCA(btn){
-    function done(){
-      if (!btn) return;
-      var old = btn.getAttribute("data-label") || btn.textContent;
-      btn.classList.add("is-copied");
-      btn.textContent = "✓ Copied";
-      setTimeout(function(){ btn.classList.remove("is-copied"); btn.textContent = old; }, 2000);
-    }
-    function fallback(){
-      var ta = document.createElement("textarea");
-      ta.value = GTA6L_CA;
-      ta.setAttribute("readonly", "");
-      ta.style.position = "fixed"; ta.style.opacity = "0";
-      document.body.appendChild(ta);
-      ta.select();
-      try { document.execCommand("copy"); } catch (e) {}
-      document.body.removeChild(ta);
-      done();
-    }
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(GTA6L_CA).then(done).catch(fallback);
-    } else { fallback(); }
-  }
-  document.querySelectorAll("[data-copy-ca]").forEach(function(btn){
-    btn.setAttribute("data-label", btn.textContent);
-    btn.addEventListener("click", function(e){ e.preventDefault(); e.stopPropagation(); copyCA(btn); });
-  });
 
   /* ---------- draggable showcase strip ---------- */
   var vp = document.getElementById("stripViewport");
